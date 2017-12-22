@@ -1,0 +1,36 @@
+
+.PodHeader {
+    background-color: #fff;
+    padding: 0.6em;
+    margin: 0px;
+    margin-bottom: 1px;
+}
+
+.PodCard {
+    background-color: #fff;
+    padding: 0.6em;
+    margin-bottom: 1px;
+}
+
+
+.row {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.PodList {
+    background-color: #aaa;
+    margin-left: 2em;
+    margin-right: 2em;
+    padding: 1px;
+}
+
+.PodCard button {
+  border-width: 0px;
+  text-decoration: none;
+  background-color: transparent;
+  font-family: Roboto,"Helvetica Neue",sans-serif;
+  cursor: pointer;
+  font-size: medium;
+  color: blue;
+}
