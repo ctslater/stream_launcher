@@ -22,15 +22,15 @@ pod_data = [
    "age": "1 week"},
 ]
 
-@app.route("/api")
+@app.route("/")
 def api():
     return "This is the API server."
 
-@app.route("/api/system_status")
+@app.route("/system_status")
 def system_status():
     return json.dumps(status)
 
-@app.route("/api/pods")
+@app.route("/pods")
 def pods():
     return json.dumps(pod_data)
 
