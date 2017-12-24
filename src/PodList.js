@@ -24,12 +24,16 @@ class PodCard extends Component {
               <Col md={3}><button onClick={this.toggleExpand}>{this.props.pod.name}</button></Col>
               <Col md={2}>{this.props.pod.node}</Col>
               <Col md={1}>{this.props.pod.status}</Col>
-              <Col md={1}>{this.props.pod.age}</Col>
+              <Col md={1}>{this.props.pod.running_time}</Col>
             </Row>
             { this.state.expanded ? (
             <Row className="PodCard">
-              <Col md={2}>Details:</Col>
-              <Col md={2}>Restarts: {this.props.pod.restarts}</Col>
+              <Col md={4}>
+                <ul>
+                  <li>Image: {this.props.pod.image}</li>
+                  <li>Restarts: {this.props.pod.restarts}</li>
+                </ul>
+              </Col>
               <Col md={2}><button>Terminate Filter</button></Col>
             </Row>
             ) : null }

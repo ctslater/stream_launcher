@@ -8,11 +8,11 @@ class StatusHeader extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {}
-        this.state.data = {}
+        var data = {};
         props.fields.forEach( (fieldName) => {
-            this.state.data[fieldName.toLowerCase()] = ["unknown", "yellow"]
+            data[fieldName.toLowerCase()] = ["unknown", "yellow"]
         });
+        this.state = {data: data};
     }
 
     loadData() {
