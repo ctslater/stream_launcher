@@ -3,6 +3,13 @@ from flask import Flask
 app = Flask(__name__)
 
 from flask import json
+import kubernetes
+
+# For use in a running pod
+kubernetes.config.incluster_config.load_incluster_config()
+
+# For testing with token in ~/.kube/config
+# kubernetes.config.load_kube_config()
 
 status = {"kafka": ("Running", "green"),
           "dome": ("Opening", "yellow"),
@@ -32,5 +39,18 @@ def system_status():
 
 @app.route("/pods")
 def pods():
-    return json.dumps(pod_data)
+
+    v1 = kubernetes.client.CoreV1Api()
+    ret = v1.list_namespaced_pod("default", watch=False)
+    pods = []
+    for item in ret.items:
+        pods.append({"name": item.metadata.name,
+                     "status": item.status.phase,
+                     #"image": item.spec.image,
+                     "created": item.metadata.creation_timestamp,
+                     "node": item.spec.node_name,
+                     #"conditions": item.status.conditions
+                    })
+
+    return json.dumps(pods)
 
