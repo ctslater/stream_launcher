@@ -39,7 +39,7 @@ class StatusHeader extends Component {
               </Col>
               <Col md={6}>
               { this.props.fields.map( fieldName => (
-                  <p>{fieldName}: &nbsp;
+                  <p key={fieldName}>{fieldName}: &nbsp;
                     <font color={this.state.data[fieldName.toLowerCase()][1]}> 
                       {this.state.data[fieldName.toLowerCase()][0] }
                     </font>

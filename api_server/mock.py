@@ -12,3 +12,9 @@ class MockKubernetesAPI:
         ret = pickle.load(f)
         return ret
 
+    def create_namespaced_deployment(self, namespace, body=None):
+
+        return {"status": "Success",
+                "message": "This is a mock response",
+                "reason": "None"}
+

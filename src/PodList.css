@@ -25,6 +25,23 @@
     padding: 1px;
 }
 
+.PodDetail {
+    text-align: left;
+    padding: 5px;
+    font-size: 11pt;
+}
+
+.PodDetailHeader {
+    font-size: 11pt;
+    color: #888;
+    margin-top: 0.8em;
+}
+
+.SelectedCardDetail {
+    background-color: aliceblue;
+
+}
+
 .PodCard button {
   border-width: 0px;
   text-decoration: none;
