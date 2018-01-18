@@ -21,9 +21,9 @@ else:
     print("----------")
     print("DEBUG mode")
     print("----------")
-    from api_server.mock import MockKubernetesAPI
-    v1 = MockKubernetesAPI()
-    v1beta2 = MockKubernetesAPI()
+    from api_server.mock import MockKubernetesAPIv1, MockKubernetesAPIv1beta2
+    v1 = MockKubernetesAPIv1()
+    v1beta2 = MockKubernetesAPIv1beta2()
 
 # For testing with token in ~/.kube/config
 # kubernetes.config.load_kube_config()
@@ -54,6 +54,7 @@ def system_status():
 @app.route("/pods")
 def pods():
 
+    #ret = v1beta2.list_namespaced_deployment("default", watch=False)
     ret = v1.list_namespaced_pod("default", watch=False)
     #import pdb; pdb.set_trace()
     pods = []

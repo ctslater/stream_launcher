@@ -51,6 +51,12 @@ class NewFilterCard extends PodCard {
                 filter_name: this.state.filter_name,
                 image_name: this.state.image_name, })
             });
+
+	/* Should check for success and print a message */
+	this.toggleExpand();
+	this.state.setState({filter_name: "", image_name: ""});
+
+
         event.preventDefault();
     }
 
